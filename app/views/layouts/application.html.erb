@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ZoomLink</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="flex">
+          <div class="nav-right">
+            <ul class="nav-lists">
+              <% if user_signed_in? %>
+              <li class="nav-list"><%= current_user.name %><span class="user_name">様</span></li>
+              <li class="nav-list"><%= link_to "Home", lists_path, class: "text-decoration" %></li>
+              <li class="nav-list"><%= link_to "logout", destroy_user_session_path, method: :delete, class: "text-decoration" %></li>
+              <% else %>
+              <li class="nav-list"><%= link_to "sign up",  new_user_registration_path, class: "text-decoration" %></li>
+              <li class="nav-list"><%= link_to "login",  new_user_session_path, class: "text-decoration" %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header><!-- /header -->
+    <div class="container">
+    <%= yield %>
+  </div>
+  </body>
+</html>
