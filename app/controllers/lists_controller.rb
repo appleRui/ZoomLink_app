@@ -10,6 +10,7 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+
   end
 
   # GET /lists/new
@@ -19,6 +20,13 @@ class ListsController < ApplicationController
 
   # GET /lists/1/edit
   def edit
+  set_list
+    # byebug
+  if current_user.id == @list.user_id.to_i
+  set_list
+  else
+    redirect_to lists_path
+  end
   end
 
   # POST /lists

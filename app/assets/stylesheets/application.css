@@ -36,7 +36,7 @@ body{
 .nav-list{
  	display: inline-block;
  	margin-right: 10px;
- 	font-size: 14px;	
+ 	font-size: 14px;
 }
  .text-decoration{
  	text-decoration: none;
@@ -44,4 +44,12 @@ body{
  .user_name{
  	margin-left: 5px;
  }
+ .flash{
+	/*margin: 33px 0 0 33px;*/
+	color: green;
+}
+.flash-alert{
+	/*margin: 33px 0 0 33px;*/
+	color: red;
+}
 
