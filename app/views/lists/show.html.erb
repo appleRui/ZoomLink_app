@@ -8,5 +8,10 @@
   <%= @list.content %>
 </p>
 
+<p>
+  <strong>week:</strong>
+  <%= @DAT_OF_WEEK[@list.week.to_i] %><span>曜日</span>
+</p>
+
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>

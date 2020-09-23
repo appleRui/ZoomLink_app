@@ -1,16 +1,17 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :week_jp, only: [:index, :show, :edit]
 
   # GET /lists
   # GET /lists.json
   def index
-    @lists = current_user.lists.all
+    @lists = current_user.lists.all.order(week: :asc)
+    @today_list = List.where(week: Date.today.wday) 
   end
 
   # GET /lists/1
   # GET /lists/1.json
   def show
-
   end
 
   # GET /lists/new
@@ -20,7 +21,6 @@ class ListsController < ApplicationController
 
   # GET /lists/1/edit
   def edit
-  set_list
     # byebug
   if current_user.id == @list.user_id.to_i
   set_list
@@ -34,7 +34,6 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.user_id = current_user.id
-
     respond_to do |format|
       if @list.save
         format.html { redirect_to @list, notice: 'List was successfully created.' }
@@ -78,6 +77,10 @@ class ListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def list_params
-      params.require(:list).permit(:subject, :content)
+      params.require(:list).permit(:subject, :content, :week)
+    end
+
+    def week_jp
+      @DAT_OF_WEEK = ["日", "月", "火", "水", "木", "金", "土"]
     end
 end
