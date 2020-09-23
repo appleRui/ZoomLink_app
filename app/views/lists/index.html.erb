@@ -1,6 +1,6 @@
 <h1>Today_Meeting</h1>
 <% @today_list.each do |toli| %>
-<p><%= link_to toli.subject, toli.content %></p>
+<p><%= link_to toli.subject, toli.content, { :class => "text-decoration", :target => "_blank"}  %></p>
 <% end %>
 
 <h1>ZoomLink</h1>
