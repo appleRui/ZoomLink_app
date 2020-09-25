@@ -6,7 +6,8 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @lists = current_user.lists.all.order(week: :asc)
-    @today_list = current_user.List.where(week: Date.today.wday)
+    @today_list = current_user.lists.where(week: Date.today.wday)
+    # binding.pry
   end
 
   # GET /lists/1
@@ -81,6 +82,6 @@ class ListsController < ApplicationController
     end
 
     def week_jp
-      @day_of_week = ["日", "月", "火", "水", "木", "金", "土"]
+      @DAT_OF_WEEK = ["日", "月", "火", "水", "木", "金", "土"]
     end
 end
