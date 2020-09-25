@@ -13,25 +13,19 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
 
 body{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
- .container{
- 	margin: 0 auto;
- 	max-width: 1170px;
- }
- .flex{
- 	display: flex;
- }
-
  .nav-right{
  	margin: 0 5px 0 auto;
  }
 .nav-lists{
- 	list-style: none;
+	 list-style: none;
+	 margin: 10px 0;
 }
 .nav-list{
  	display: inline-block;

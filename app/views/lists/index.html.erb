@@ -1,11 +1,17 @@
 <h1>Today_Meeting</h1>
+<table class="table table-striped">
+<tbody>
 <% @today_list.each do |toli| %>
-<p><%= link_to toli.subject, toli.content, { :class => "text-decoration", :target => "_blank"}  %></p>
+<tr>
+<td><%= link_to toli.subject, toli.content, { :class => "text-decoration", :target => "_blank"}  %></td>
+<tr>
 <% end %>
+</tbody>
+</table>
 
 <h1>ZoomLink</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>week</th>
@@ -29,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New List', new_list_path %>
+<%= link_to 'New List', new_list_path, class: "btn btn-outline-secondary" %>
