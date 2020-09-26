@@ -18,11 +18,11 @@
               <% if user_signed_in? %>
               <li class="nav-list"><%=Date.today.strftime '%Y年%-m月%-d日'%></li>
               <li class="nav-list"><%= current_user.name %><span class="user_name">様</span></li>
-              <li class="nav-list"><%= link_to "Home", lists_path, class: "text-decoration" %></li>
-              <li class="nav-list"><%= link_to "logout", destroy_user_session_path, method: :delete, class: "text-decoration" %></li>
+              <li class="nav-list"><%= link_to "一覧", lists_path, class: "text-decoration" %></li>
+              <li class="nav-list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-decoration" %></li>
               <% else %>
-              <li class="nav-list"><%= link_to "sign up",  new_user_registration_path, class: "text-decoration" %></li>
-              <li class="nav-list"><%= link_to "login",  new_user_session_path, class: "text-decoration" %></li>
+              <li class="nav-list"><%= link_to "サインアップ",  new_user_registration_path, class: "text-decoration" %></li>
+              <li class="nav-list"><%= link_to "ログイン",  new_user_session_path, class: "text-decoration" %></li>
               <% end %>
             </ul>
           </div>

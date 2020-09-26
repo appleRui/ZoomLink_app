@@ -1,17 +1,17 @@
 <p>
-  <strong>Subject:</strong>
+  <strong>講義名:</strong>
   <%= @list.subject %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>URL:</strong>
   <%= @list.content %>
 </p>
 
 <p>
-  <strong>week:</strong>
+  <strong>履修曜日:</strong>
   <%= @DAT_OF_WEEK[@list.week.to_i] %><span>曜日</span>
 </p>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<%= link_to 'edit', edit_list_path(@list) %> |
+<%= link_to 'back', lists_path %>
