@@ -1,17 +1,17 @@
 <h1>今日のミーティング</h1>
 <table class="table table-striped">
-<thead>
-    <tr>
-      <th>講義名</th>
-    </tr>
-  </thead>
-<tbody>
-<% @today_list.each do |toli| %>
-<tr>
-<td><%= link_to toli.subject, toli.content, { :class => "text-decoration", :target => "_blank"}  %></td>
-<tr>
-<% end %>
-</tbody>
+ <thead>
+     <tr>
+       <th>講義名</th>
+     </tr>
+ </thead>
+ <tbody>
+  <% @today_list.each do |toli| %>
+   <tr>
+     <td><%= link_to toli.subject, toli.content, { :class => "text-decoration", :target => "_blank"}%></td>
+   </tr>
+  <% end %>
+ </tbody>
 </table>
 
 <h1>ミーティング一覧</h1>
