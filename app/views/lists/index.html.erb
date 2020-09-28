@@ -1,5 +1,5 @@
 <h1>今日のミーティング</h1>
-<table class="table table-striped">
+<table class="table table-striped today_meeting">
  <thead>
      <tr>
        <th>講義名</th>
@@ -8,7 +8,7 @@
  <tbody>
   <% @today_list.each do |toli| %>
    <tr>
-     <td><%= link_to toli.subject, toli.content, { :class => "text-decoration", :target => "_blank"}%></td>
+     <td><%= link_to toli.subject, toli.content, { :class => "text-decoration #{Date.today.strftime("%a")}", :target => "_blank"}%></td>
    </tr>
   <% end %>
  </tbody>
