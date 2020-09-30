@@ -2,12 +2,14 @@
 <table class="table table-striped today_meeting">
  <thead>
      <tr>
+       <th>時間</th>
        <th>講義名</th>
      </tr>
  </thead>
  <tbody>
-  <% @today_list.each do |toli| %>
+  <% @today_lists.each do |toli| %>
    <tr>
+     <td><%= @Time[toli.stu_time] %></td>
      <td><%= link_to toli.subject, toli.content, { :class => "text-decoration #{Date.today.strftime("%a")}", :target => "_blank"}%></td>
    </tr>
   <% end %>
@@ -28,7 +30,7 @@
   <tbody>
     <% @lists.each do |list| %>
       <tr>
-        <td><%= @DAT_OF_WEEK[list.week.to_i] %></td>
+        <td><%= @DAT_OF_WEEK[list.stu_week.to_i] %></td>
         <td><%= link_to list.subject, list.content, { :class => "text-decoration", :target => "_blank"}  %></td>
         <td><%= link_to 'show', list %></td>
         <td><%= link_to 'edit', edit_list_path(list) %></td>
