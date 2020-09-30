@@ -8,9 +8,7 @@ class ListsController < ApplicationController
   def index
     @lists = current_user.lists.all.order(stu_week: :asc)
     select_lists = current_user.lists.where(stu_week: Date.today.wday).order(stu_time: :asc)
-    @today_lists = select_lists.select { |select_list| select_list.stu_time.to_i > @T_NOW  }
-    # binding.pry
-
+    @today_lists = select_lists.select { |select_list| select_list.stu_time.to_i > @T_NOW || select_list.stu_time.to_i == 0 }
   end
 
   # GET /lists/1
@@ -86,7 +84,7 @@ class ListsController < ApplicationController
 
     def week_jp
       @DAT_OF_WEEK = ["日", "月", "火", "水", "木", "金", "土"]
-      @Time =  { "1030" => "N1", "1210" => "N2", "1440" => "N3", "1620" => "N4", "1800" => "N5", "1940" => "N6", "2120" => "N7" }
+      @Time =  { "1030" => "N1", "1210" => "N2", "1440" => "N3", "1620" => "N4", "1800" => "N5", "1940" => "N6", "2120" => "N7", "2459" => "授業外" }
     end
 
     def Time_Now
