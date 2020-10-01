@@ -9,12 +9,8 @@
  <tbody>
   <% @today_lists.each do |toli| %>
    <tr>
-<<<<<<< HEAD
-     <td><%= link_to toli.subject, toli.content, { :class => "text-decoration", :target => "_blank"}%></td>
-=======
      <td><%= @Time[toli.stu_time] %></td>
      <td><%= link_to toli.subject, toli.content, { :class => "text-decoration #{Date.today.strftime("%a")}", :target => "_blank"}%></td>
->>>>>>> 36acdd735d694584b2463fafa8e58cb3f3433a32
    </tr>
   <% end %>
  </tbody>
