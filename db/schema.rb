@@ -18,7 +18,8 @@ ActiveRecord::Schema.define(version: 2020_09_23_112116) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "user_id"
-    t.string "week"
+    t.string "stu_week"
+    t.string "stu_time"
   end
 
   create_table "users", force: :cascade do |t|

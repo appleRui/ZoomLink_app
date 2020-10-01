@@ -16,5 +16,8 @@ class User < ApplicationRecord
             where(conditions).first
           end
         end
+<<<<<<< HEAD
 
+=======
+>>>>>>> 36acdd735d694584b2463fafa8e58cb3f3433a32
 end
