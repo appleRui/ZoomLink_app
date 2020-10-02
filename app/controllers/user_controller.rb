@@ -4,7 +4,6 @@ class UserController < ApplicationController
     @user = current_user
     respond_to do |format|
     if @user.update(user_params)
-      binding.pry
       format.html { redirect_to lists_path, notice: 'ユーザー情報が更新されました' }
       format.json { render :index, status: :ok, location: @user }
     else
