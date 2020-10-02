@@ -6,9 +6,11 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
+    @user = current_user
     @lists = current_user.lists.all.order(stu_week: :asc)
     select_lists = current_user.lists.where(stu_week: Date.today.wday).order(stu_time: :asc)
     @today_lists = select_lists.select { |select_list| select_list.stu_time.to_i > @T_NOW || select_list.stu_time.to_i == 0 }
+    # binding.pry
   end
 
   # GET /lists/1

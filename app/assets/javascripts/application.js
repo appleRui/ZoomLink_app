@@ -16,3 +16,19 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function() {
+    $(document).on('click', '.user_edit_botton', function() {
+      $('.user_edit_modal_wrapper').show();
+      $('.user_modal').show();
+      $('.user_modal_content').show();
+    });
+  });
+
+  $(function() {
+    $(document).on('click', '.close_botton', function() {
+      $('.user_edit_modal_wrapper').hide();
+      $('.user_modal').hide();
+      $('.user_modal_content').hide();
+    });
+  });

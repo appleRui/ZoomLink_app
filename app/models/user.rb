@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :timeoutable, :authentication_keys => [:login]
 
          has_many :lists, dependent: :destroy
-         validates :name, presence: true
+         validates :name, presence: true,length: {minimum:2, maximum:10}
+         validates :email, presence: true
          attr_accessor :login
 
          def self.find_first_by_auth_conditions(warden_conditions)

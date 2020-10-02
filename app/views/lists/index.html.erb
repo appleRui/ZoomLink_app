@@ -1,3 +1,14 @@
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h2>
+
+      <ul>
+      <% list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 <h1>今日のミーティング</h1>
 <table class="table table-striped">
  <thead>

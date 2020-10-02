@@ -14,6 +14,8 @@
  *= require_self
  */
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 body{
 	margin: 0;
@@ -36,7 +38,8 @@ body{
  	text-decoration: none;
  }
  .user_name{
- 	margin-left: 5px;
+   margin-left: 5px;
+   margin-right: 5px;
  }
  .flash{
 	/*margin: 33px 0 0 33px;*/
@@ -47,3 +50,45 @@ body{
 	color: red;
 }
 
+.user_edit_modal_wrapper{
+ position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+}
+
+.user_modal{
+  position: absolute;
+  background-color: #fff;
+  width: 450px;
+  height: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border: 1px solid #eee;
+  border-radius: 10px;
+  display: none;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user_modal_content{
+  display: none;
+  text-align: center;
+}
+.user_edit_botton{
+  cursor: pointer;
+}
+
+.user_edit_ttl{
+  margin-bottom: 10px;
+}
+
+.close_botton{
+  cursor: pointer;
+}
