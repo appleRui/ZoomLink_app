@@ -2,16 +2,15 @@ class UserController < ApplicationController
 
   def update
     @user = current_user
-    respond_to do |format|
     if @user.update(user_params)
-      format.html { redirect_to lists_path, notice: 'ユーザー情報が更新されました' }
-      format.json { render :index, status: :ok, location: @user }
+      redirect_to root_path, notice: 'ユーザー情報が更新されました'
     else
-      format.html { render :users/index }
-      format.json { render json: @user.errors, status: :unprocessable_entity }
+      @lists = current_user.lists.all.order(stu_week: :asc)
+      select_lists = current_user.lists.where(stu_week: Date.today.wday).order(stu_time: :asc)
+      @today_lists = select_lists.select { |select_list| select_list.stu_time.to_i > @T_NOW || select_list.stu_time.to_i == 0 }
+      render template: "lists/index"
     end
   end
-end
 
   private
   def user_params
