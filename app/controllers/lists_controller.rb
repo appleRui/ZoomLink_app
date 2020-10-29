@@ -10,6 +10,7 @@ class ListsController < ApplicationController
     @lists = current_user.lists.all.order(stu_week: :asc)
     select_lists = current_user.lists.where(stu_week: Date.today.wday).order(stu_time: :asc)
     @today_lists = select_lists.select { |select_list| select_list.stu_time.to_i > @T_NOW || select_list.stu_time.to_i == 0 }
+    @list = List.new
     # binding.pry
   end
 
@@ -20,7 +21,6 @@ class ListsController < ApplicationController
 
   # GET /lists/new
   def new
-    @list = List.new
   end
 
   # GET /lists/1/edit
@@ -68,9 +68,13 @@ class ListsController < ApplicationController
   def destroy
     @list.destroy
     respond_to do |format|
-      format.html { redirect_to lists_url, notice: 'リストが削除されました' }
+      format.html { redirect_to lists_url, alert: 'リストが削除されました' }
       format.json { head :no_content }
     end
+  end
+
+  def select_delete
+    
   end
 
   private

@@ -32,3 +32,10 @@ $(function() {
       $('.user_modal_content').hide();
     });
   });
+
+  $(function() {
+    $(document).on('click', '#select_delete_btn', function() {
+      $(".check_box").slideToggle();
+      $(".check_box").toggleClass("active");
+    });
+  });

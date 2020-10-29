@@ -2,11 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.test{
-	width: 650px;
-	height: 20px;
-}
-
 .btn{
 	color: white;
+}
+
+.check_box{
+	width: 17px;
+	height: 17px;
+	display: none;
+}
+
+.list_icon{
+	margin-left: 3px;
 }
